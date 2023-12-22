@@ -1,0 +1,81 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2
+
+Multiplexing: HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.
+
+Server push: Typically, a server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages, which often involve several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to "push" content to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect – like if Bob had sent Alice a Table of Contents of his novel before sending the whole thing.
+
+Header compression: Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.
+
+Request Prioritization
+It enables the browser to request all elements when discovered, communicating to the server its intention to prioritize any of them. This is done through dependencies and stream weights. An example of this is when CSS files and JS files are requested, that with HTTP/2 the browser will prioritize CSS files first, even if its request in DOM order comes after the JS.
+
+Binary framing layer
+This is the core of all HTTP/2 performance improvements, determining how HTTP messages are encapsulated and transferred between client and server. The encoding mechanism has been redesigned without changing the semantics of methods, verbs, and headers. Communication is broken into frames, over a single TCP connection.
+
+===============================================================================================================
+Objects and its internal representation in Javascript :
+
+JavaScript objects are similar to objects in real life which consists of different attributes and properties. These objects are defined as an unordered collection of related data, that are of primitive or reference types. These are defined in the form of “key: value” pairs.
+
+Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+
+An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+
+Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+
+For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateNam, etc.
+Objects and properties
+
+A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. 
+
+You access the properties of an object with a simple dot-notation:
+objectName.propertyName
+
+Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar and give it properties named make, model, and year as follows:
+
+var myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;
+
+==============================================================================================================
+Read about IP address, port, HTTP methods, MAC address:
+
+IP address:
+
+An Internet Protocol (IP) address is a unique numerical identifier for every device or network that connects to the internet. Typically assigned by an internet service provider (ISP), an IP address is an online device address used for communicating across the internet.
+
+Port address:
+
+Port is an address of a 16-bit unsigned integer number which ranges from 0 to 65535. The primary application of a port number is to transmit the data between a Computer Network and an Application. Port is just a unique number assigned to every application of a computer.
+
+Mac address:
+
+A MAC address (media access control address) is a 12-digit hexadecimal number assigned to each device connected to the network. Primarily specified as a unique identifier during device manufacturing, the MAC address is often found on a device's network interface card (NIC).
+
+HTTP methods:
+GET
+The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+
+HEAD
+Same as GET, but transfers the status line and header section only.
+
+POST
+A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+
+PUT
+Replaces all current representations of the target resource with the uploaded content.
+
+DELETE
+Removes all current representations of the target resource given by a URI.
+
+CONNECT
+Establishes a tunnel to the server identified by a given URI.
+
+OPTIONS
+Describes the communication options for the target resource.
+
+TRACE
+Performs a message loop-back test along the path to the target resource.
+
